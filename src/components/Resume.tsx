@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Download, Award, Briefcase, GraduationCap } from "lucide-react";
+import { Download, Award, GraduationCap } from "lucide-react";
 
 const Resume = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -28,24 +28,16 @@ const Resume = () => {
       icon: GraduationCap,
       title: "Education",
       items: [
-        { name: "Bachelor of Commerce", detail: "University Name • 2021 - Present", color: "text-primary" },
-        { name: "Data Science Certification", detail: "Online Platform • 2023", color: "text-primary" },
-      ]
-    },
-    {
-      icon: Briefcase,
-      title: "Experience",
-      items: [
-        { name: "Business Analyst Intern", detail: "Tech Company • Summer 2023", color: "text-secondary" },
-        { name: "Data Analytics Project", detail: "Freelance • 2022 - 2023", color: "text-secondary" },
+        { name: "Secondary Education (10th)", detail: "St Paul's School, Rampurhat • 2025", color: "text-primary" },
+        { name: "Higher Secondary (Class 11)", detail: "Don Bosco Park Circus School • Present", color: "text-primary" },
       ]
     },
     {
       icon: Award,
-      title: "Achievements",
+      title: "Certifications",
       items: [
-        { name: "Data Science Competition Winner", detail: "National Level • 2023", color: "text-accent" },
-        { name: "Business Plan Innovation Award", detail: "University Level • 2022", color: "text-accent" },
+        { name: "GenAI Powered Data Analytics", detail: "Tata via Forage • October 2025", color: "text-secondary" },
+        { name: "Data Analytics Job Simulation", detail: "Deloitte via Forage • October 2025", color: "text-secondary" },
       ]
     }
   ];
@@ -58,7 +50,7 @@ const Resume = () => {
         </h2>
 
         <div className="max-w-4xl mx-auto mb-12">
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
             {resumeData.map((section, index) => {
               const Icon = section.icon;
               return (

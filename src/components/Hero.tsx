@@ -98,7 +98,7 @@ const Hero = () => {
             
             <Button size="lg" variant="outline" onClick={() => document.getElementById("contact")?.scrollIntoView({
             behavior: "smooth"
-          })} className="border-primary text-primary hover:bg-primary/10 font-semibold mx-[9px] px-[63px] py-[25px] my-[11px]">
+          })} className="border-primary text-primary hover:bg-primary/10 font-semibold mx-[9px] py-[25px] my-[11px] px-[48px]">
               Get In Touch
             </Button>
           </div>

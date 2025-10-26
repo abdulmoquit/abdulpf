@@ -3,13 +3,11 @@ import About from "@/components/About";
 import Resume from "@/components/Resume";
 import Contact from "@/components/Contact";
 import Navbar from "@/components/Navbar";
-
 const Index = () => {
-  return (
-    <main className="relative">
+  return <main className="relative">
       <Navbar />
       <Hero />
-      <About />
+      <About className="my-0" />
       <Resume />
       <Contact />
       
@@ -18,8 +16,6 @@ const Index = () => {
           © {new Date().getFullYear()} Abdul Moquit. Crafted with passion and code.
         </p>
       </footer>
-    </main>
-  );
+    </main>;
 };
-
 export default Index;

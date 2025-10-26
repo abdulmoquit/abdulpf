@@ -2,20 +2,15 @@ import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
-
 const Hero = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
-
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-
     const particles: Array<{
       x: number;
       y: number;
@@ -24,7 +19,6 @@ const Hero = () => {
       speedY: number;
       opacity: number;
     }> = [];
-
     for (let i = 0; i < 100; i++) {
       particles.push({
         x: Math.random() * canvas.width,
@@ -32,55 +26,43 @@ const Hero = () => {
         size: Math.random() * 2 + 1,
         speedX: Math.random() * 0.5 - 0.25,
         speedY: Math.random() * 0.5 - 0.25,
-        opacity: Math.random() * 0.5 + 0.2,
+        opacity: Math.random() * 0.5 + 0.2
       });
     }
-
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      particles.forEach((particle) => {
+      particles.forEach(particle => {
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(0, 240, 255, ${particle.opacity})`;
         ctx.fill();
-
         particle.x += particle.speedX;
         particle.y += particle.speedY;
-
         if (particle.x < 0 || particle.x > canvas.width) particle.speedX *= -1;
         if (particle.y < 0 || particle.y > canvas.height) particle.speedY *= -1;
       });
-
       requestAnimationFrame(animate);
     };
-
     animate();
-
     const handleResize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     };
-
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
   const scrollToAbout = () => {
-    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("about")?.scrollIntoView({
+      behavior: "smooth"
+    });
   };
-
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div 
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `url(${heroBg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <div className="absolute inset-0 z-0" style={{
+      backgroundImage: `url(${heroBg})`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat"
+    }}>
         <div className="absolute inset-0 bg-background/80" />
       </div>
       
@@ -92,48 +74,40 @@ const Hero = () => {
             Abdul Moquit
           </h1>
           <div className="text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-4 font-light">
-            <span className="inline-block animate-slide-in-up" style={{ animationDelay: "0.2s" }}>
+            <span className="inline-block animate-slide-in-up" style={{
+            animationDelay: "0.2s"
+          }}>
               Commerce Student
             </span>
             <span className="mx-3 text-primary">•</span>
-            <span className="inline-block animate-slide-in-up" style={{ animationDelay: "0.4s" }}>
+            <span className="inline-block animate-slide-in-up" style={{
+            animationDelay: "0.4s"
+          }}>
               Business Enthusiast
             </span>
           </div>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 animate-slide-in-up" style={{ animationDelay: "0.6s" }}>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 animate-slide-in-up" style={{
+          animationDelay: "0.6s"
+        }}>
             Passionate about <span className="text-primary font-semibold">Data Science</span>,{" "}
             <span className="text-secondary font-semibold">Technology</span>, and creating innovative solutions
           </p>
-          <div className="flex gap-4 justify-center animate-slide-in-up" style={{ animationDelay: "0.8s" }}>
-            <Button 
-              size="lg" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold neon-glow group"
-              onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
-            >
-              View Projects
-              <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="border-primary text-primary hover:bg-primary/10 font-semibold"
-              onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-            >
+          <div style={{
+          animationDelay: "0.8s"
+        }} className="flex gap-4 justify-center animate-slide-in-up mx-[198px] px-[63px] my-[4px]">
+            
+            <Button size="lg" variant="outline" onClick={() => document.getElementById("contact")?.scrollIntoView({
+            behavior: "smooth"
+          })} className="border-primary text-primary hover:bg-primary/10 font-semibold mx-[9px] px-[63px] py-[25px] my-[11px]">
               Get In Touch
             </Button>
           </div>
         </div>
       </div>
 
-      <button
-        onClick={scrollToAbout}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 animate-bounce cursor-pointer bg-transparent border-none"
-        aria-label="Scroll to about section"
-      >
+      <button onClick={scrollToAbout} className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 animate-bounce cursor-pointer bg-transparent border-none" aria-label="Scroll to about section">
         <ArrowDown className="w-8 h-8 text-primary" />
       </button>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;

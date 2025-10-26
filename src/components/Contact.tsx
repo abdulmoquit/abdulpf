@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Linkedin, Github, Twitter, Send } from "lucide-react";
+import { Mail, Linkedin, Twitter, Send } from "lucide-react";
 import { toast } from "sonner";
 
 const Contact = () => {
@@ -34,10 +34,9 @@ const Contact = () => {
   };
 
   const socialLinks = [
-    { icon: Mail, label: "Email", href: "mailto:contact@abdulmoquit.com", color: "hover:text-primary" },
-    { icon: Linkedin, label: "LinkedIn", href: "#", color: "hover:text-secondary" },
-    { icon: Github, label: "GitHub", href: "#", color: "hover:text-accent" },
-    { icon: Twitter, label: "Twitter", href: "#", color: "hover:text-primary" },
+    { icon: Mail, label: "Email", href: "mailto:abdulmoquit00007@gmail.com", color: "hover:text-primary" },
+    { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/abdul-moquit-523bb5389/", color: "hover:text-secondary" },
+    { icon: Twitter, label: "Twitter", href: "https://x.com/AbdulMoqui26836", color: "hover:text-primary" },
   ];
 
   return (

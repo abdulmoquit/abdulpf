@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Code2, Database, TrendingUp, Brain } from "lucide-react";
-const About = () => {
+const About = ({ className = "" }: { className?: string }) => {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
@@ -37,7 +37,7 @@ const About = () => {
     icon: Brain,
     color: "text-primary"
   }];
-  return <section id="about" ref={sectionRef} className="py-20 md:py-32 relative">
+  return <section id="about" ref={sectionRef} className={`py-20 md:py-32 relative ${className}`}>
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto my-0 py-0">
           <h2 className={`text-4xl md:text-6xl font-heading font-bold mb-12 text-center glow-text transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>

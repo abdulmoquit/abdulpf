@@ -94,11 +94,11 @@ const Hero = () => {
           </p>
           <div style={{
           animationDelay: "0.8s"
-        }} className="flex gap-4 justify-center animate-slide-in-up mx-[198px] px-[63px] my-[4px]">
+        }} className="flex gap-4 justify-center animate-slide-in-up">
             
             <Button size="lg" variant="outline" onClick={() => document.getElementById("contact")?.scrollIntoView({
             behavior: "smooth"
-          })} className="border-primary text-primary hover:bg-primary/10 font-semibold mx-[9px] py-[25px] my-[11px] px-[48px]">
+          })} className="border-primary text-primary hover:bg-primary/10 font-semibold">
               Get In Touch
             </Button>
           </div>

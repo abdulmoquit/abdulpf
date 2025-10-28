@@ -70,35 +70,36 @@ const Hero = () => {
       
       <div className="container mx-auto px-4 z-20 text-center">
         <div className="animate-fade-in">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold mb-6 glow-text">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold mb-4 glow-text">
             Abdul Moquit
           </h1>
-          <div className="text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-4 font-light">
-            <span className="inline-block animate-slide-in-up" style={{
+          <p className="text-xl md:text-2xl lg:text-3xl text-primary/90 mb-8 font-semibold animate-slide-in-up" style={{
             animationDelay: "0.2s"
           }}>
-              Commerce Student
-            </span>
-            <span className="mx-3 text-primary">•</span>
-            <span className="inline-block animate-slide-in-up" style={{
-            animationDelay: "0.4s"
-          }}>
-              Business Enthusiast
-            </span>
-          </div>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 animate-slide-in-up" style={{
-          animationDelay: "0.6s"
+            Aspiring Data Scientist | Tech Enthusiast
+          </p>
+          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-10 animate-slide-in-up" style={{
+          animationDelay: "0.4s"
         }}>
-            Passionate about <span className="text-primary font-semibold">Data Science</span>,{" "}
-            <span className="text-secondary font-semibold">Technology</span>, and creating innovative solutions
+            Passionate about <span className="text-primary font-semibold">Data Science</span>, learning{" "}
+            <span className="text-secondary font-semibold">Python</span>, and exploring the world of technology
           </p>
           <div style={{
-          animationDelay: "0.8s"
-        }} className="flex gap-4 justify-center animate-slide-in-up">
-            
-            <Button size="lg" variant="outline" onClick={() => document.getElementById("contact")?.scrollIntoView({
-            behavior: "smooth"
-          })} className="border-primary text-primary hover:bg-primary/10 font-semibold">
+          animationDelay: "0.6s"
+        }} className="flex gap-4 justify-center animate-slide-in-up flex-wrap">
+            <Button 
+              size="lg" 
+              onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })} 
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold neon-glow-cyan px-8"
+            >
+              View Projects
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline" 
+              onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })} 
+              className="border-primary text-primary hover:bg-primary/10 font-semibold"
+            >
               Get In Touch
             </Button>
           </div>

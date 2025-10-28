@@ -1,5 +1,7 @@
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import Skills from "@/components/Skills";
+import Projects from "@/components/Projects";
 import Resume from "@/components/Resume";
 import Contact from "@/components/Contact";
 import Navbar from "@/components/Navbar";
@@ -8,12 +10,14 @@ const Index = () => {
       <Navbar />
       <Hero />
       <About className="my-0" />
+      <Skills />
+      <Projects />
       <Resume />
       <Contact />
       
-      <footer className="py-8 text-center border-t border-border/20">
-        <p className="text-muted-foreground">
-          © {new Date().getFullYear()} Abdul Moquit. Crafted with passion and code.
+      <footer className="py-8 text-center border-t border-border/20 bg-card/50">
+        <p className="text-muted-foreground text-sm">
+          © 2025 Abdul Moquit · Built with Lovable AI
         </p>
       </footer>
     </main>;

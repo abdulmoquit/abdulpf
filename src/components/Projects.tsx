@@ -92,18 +92,10 @@ const Projects = () => {
                   <Button
                     variant="outline"
                     size="sm"
-                    className="border-primary text-primary hover:bg-primary/10"
+                    className="border-primary text-primary hover:bg-primary/20 hover:text-foreground"
                   >
                     <Github className="w-4 h-4 mr-2" />
-                    Code
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="border-secondary text-secondary hover:bg-secondary/10"
-                  >
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Demo
+                    GitHub
                   </Button>
                 </div>
               </div>

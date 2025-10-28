@@ -46,7 +46,7 @@ const Resume = () => {
     <section id="resume" ref={sectionRef} className="py-20 md:py-32 relative">
       <div className="container mx-auto px-4">
         <h2 className={`text-4xl md:text-6xl font-heading font-bold mb-12 text-center glow-text transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-          Resume
+          Certificates & Education
         </h2>
 
         <div className="max-w-4xl mx-auto mb-12">

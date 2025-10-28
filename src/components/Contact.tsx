@@ -49,9 +49,9 @@ const Contact = () => {
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 mb-12">
             <div className={`transition-all duration-1000 delay-200 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"}`}>
-              <h3 className="text-2xl font-heading font-bold mb-6">Let's Connect</h3>
+              <h3 className="text-2xl font-heading font-bold mb-6">Let's Build Something Together</h3>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Feel free to reach out!
+                I'm always excited to collaborate on projects, explore new ideas, or discuss opportunities in data science and tech. Let's connect!
               </p>
 
               <div className="space-y-4">

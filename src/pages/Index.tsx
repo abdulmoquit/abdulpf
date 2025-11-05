@@ -14,7 +14,7 @@ const Index = () => {
       <Contact />
       
       <footer className="py-8 text-center border-t border-border/20 bg-card/50">
-        <p className="text-muted-foreground text-sm">© 2025 Abdul Moquit · Built with Lovabl</p>
+        <p className="text-muted-foreground text-sm">© 2025 Abdul Moquit </p>
       </footer>
     </main>;
 };

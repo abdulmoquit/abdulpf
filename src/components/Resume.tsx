@@ -8,18 +8,10 @@ const Resume = () => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
+      ([entry]) => { if (entry.isIntersecting) setIsVisible(true); },
       { threshold: 0.2 }
     );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
+    if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
@@ -28,16 +20,16 @@ const Resume = () => {
       icon: GraduationCap,
       title: "Education",
       items: [
-        { name: "Secondary Education (10th)", detail: "St Paul's School, Rampurhat • 2025", color: "text-primary" },
-        { name: "Higher Secondary (Class 11)", detail: "Don Bosco Park Circus School • Present", color: "text-primary" },
+        { name: "Secondary Education (10th)", detail: "St Paul's School, Rampurhat • 2025" },
+        { name: "Higher Secondary (Class 11)", detail: "Don Bosco Park Circus School • Present" },
       ]
     },
     {
       icon: Award,
       title: "Certifications",
       items: [
-        { name: "GenAI Powered Data Analytics", detail: "Tata via Forage • October 2025", color: "text-secondary" },
-        { name: "Data Analytics Job Simulation", detail: "Deloitte via Forage • October 2025", color: "text-secondary" },
+        { name: "GenAI Powered Data Analytics", detail: "Tata via Forage • October 2025" },
+        { name: "Data Analytics Job Simulation", detail: "Deloitte via Forage • October 2025" },
       ]
     }
   ];
@@ -48,7 +40,6 @@ const Resume = () => {
         <h2 className={`text-4xl md:text-6xl font-heading font-bold mb-12 text-center glow-text transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
           Certificates & Education
         </h2>
-
         <div className="max-w-4xl mx-auto mb-12">
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             {resumeData.map((section, index) => {
@@ -59,7 +50,7 @@ const Resume = () => {
                   className={`glass rounded-2xl p-6 transition-all duration-700 hover:scale-105 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
                   style={{ transitionDelay: `${index * 150}ms` }}
                 >
-                  <Icon className={`w-10 h-10 mb-4 ${section.items[0].color}`} />
+                  <Icon className="w-10 h-10 mb-4 text-foreground/80" />
                   <h3 className="text-xl font-heading font-bold mb-6">{section.title}</h3>
                   <div className="space-y-4">
                     {section.items.map((item, i) => (
@@ -73,11 +64,10 @@ const Resume = () => {
               );
             })}
           </div>
-
           <div className={`text-center transition-all duration-1000 delay-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
             <Button
               size="lg"
-              className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white font-semibold neon-glow animate-glow"
+              className="bg-foreground text-background hover:bg-foreground/90 font-semibold neon-glow"
             >
               <Download className="w-5 h-5 mr-2" />
               Download Full Resume

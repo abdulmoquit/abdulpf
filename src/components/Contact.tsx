@@ -12,18 +12,10 @@ const Contact = () => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
+      ([entry]) => { if (entry.isIntersecting) setIsVisible(true); },
       { threshold: 0.2 }
     );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
+    if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
@@ -34,9 +26,9 @@ const Contact = () => {
   };
 
   const socialLinks = [
-    { icon: Mail, label: "Email", href: "mailto:abdulmoquit00007@gmail.com", color: "hover:text-primary" },
-    { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/abdul-moquit-523bb5389/", color: "hover:text-secondary" },
-    { icon: Twitter, label: "Twitter", href: "https://x.com/AbdulMoqui26836", color: "hover:text-primary" },
+    { icon: Mail, label: "Email", href: "mailto:abdulmoquit00007@gmail.com" },
+    { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/abdul-moquit-523bb5389/" },
+    { icon: Twitter, label: "Twitter", href: "https://x.com/AbdulMoqui26836" },
   ];
 
   return (
@@ -45,7 +37,6 @@ const Contact = () => {
         <h2 className={`text-4xl md:text-6xl font-heading font-bold mb-12 text-center glow-text transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
           Get In Touch
         </h2>
-
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 mb-12">
             <div className={`transition-all duration-1000 delay-200 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"}`}>
@@ -53,7 +44,6 @@ const Contact = () => {
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
                 I'm always excited to collaborate on projects, explore new ideas, or discuss opportunities in data science and tech. Let's connect!
               </p>
-
               <div className="space-y-4">
                 {socialLinks.map((social, index) => {
                   const Icon = social.icon;
@@ -61,7 +51,7 @@ const Contact = () => {
                     <a
                       key={index}
                       href={social.href}
-                      className={`flex items-center gap-4 glass rounded-xl p-4 transition-all duration-300 hover:scale-105 ${social.color} group`}
+                      className="flex items-center gap-4 glass rounded-xl p-4 transition-all duration-300 hover:scale-105 hover:text-foreground group"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -72,41 +62,34 @@ const Contact = () => {
                 })}
               </div>
             </div>
-
             <div className={`transition-all duration-1000 delay-400 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"}`}>
               <form onSubmit={handleSubmit} className="glass rounded-2xl p-8 space-y-6">
-                <div>
-                  <Input
-                    type="text"
-                    placeholder="Your Name"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="bg-background/50 border-primary/20 focus:border-primary transition-colors"
-                    required
-                  />
-                </div>
-                <div>
-                  <Input
-                    type="email"
-                    placeholder="Your Email"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="bg-background/50 border-primary/20 focus:border-primary transition-colors"
-                    required
-                  />
-                </div>
-                <div>
-                  <Textarea
-                    placeholder="Your Message"
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="bg-background/50 border-primary/20 focus:border-primary transition-colors min-h-[150px] resize-none"
-                    required
-                  />
-                </div>
+                <Input
+                  type="text"
+                  placeholder="Your Name"
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  className="bg-background/50 border-border focus:border-foreground/40 transition-colors"
+                  required
+                />
+                <Input
+                  type="email"
+                  placeholder="Your Email"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className="bg-background/50 border-border focus:border-foreground/40 transition-colors"
+                  required
+                />
+                <Textarea
+                  placeholder="Your Message"
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  className="bg-background/50 border-border focus:border-foreground/40 transition-colors min-h-[150px] resize-none"
+                  required
+                />
                 <Button
                   type="submit"
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold neon-glow"
+                  className="w-full bg-foreground text-background hover:bg-foreground/90 font-semibold neon-glow"
                   size="lg"
                 >
                   <Send className="w-5 h-5 mr-2" />

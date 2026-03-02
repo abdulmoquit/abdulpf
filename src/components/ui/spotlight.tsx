@@ -1,5 +1,6 @@
 import React from "react";
 import { cn } from "@/lib/utils";
+import { useTheme } from "@/components/ThemeProvider";
 
 type SpotlightProps = {
   className?: string;
@@ -7,6 +8,11 @@ type SpotlightProps = {
 };
 
 export const Spotlight = ({ className, fill }: SpotlightProps) => {
+  const { theme } = useTheme();
+  const resolvedFill = fill === "white" || !fill
+    ? theme === "dark" ? "white" : "#1a1a1a"
+    : fill;
+
   return (
     <svg
       className={cn(
@@ -24,7 +30,7 @@ export const Spotlight = ({ className, fill }: SpotlightProps) => {
           rx="1924.71"
           ry="273.501"
           transform="matrix(-0.822377 -0.568943 -0.568943 0.822377 3631.88 2291.09)"
-          fill={fill || "white"}
+          fill={resolvedFill}
           fillOpacity="0.21"
         ></ellipse>
       </g>

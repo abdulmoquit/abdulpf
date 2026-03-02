@@ -10,8 +10,11 @@ type SpotlightProps = {
 export const Spotlight = ({ className, fill }: SpotlightProps) => {
   const { theme } = useTheme();
   const resolvedFill = fill === "white" || !fill
-    ? theme === "dark" ? "white" : "#1a1a1a"
+    ? theme === "dark" ? "white" : "#000000"
     : fill;
+  const resolvedOpacity = fill === "white" || !fill
+    ? theme === "dark" ? 0.21 : 0.35
+    : 0.21;
 
   return (
     <svg
@@ -31,7 +34,7 @@ export const Spotlight = ({ className, fill }: SpotlightProps) => {
           ry="273.501"
           transform="matrix(-0.822377 -0.568943 -0.568943 0.822377 3631.88 2291.09)"
           fill={resolvedFill}
-          fillOpacity="0.21"
+          fillOpacity={resolvedOpacity}
         ></ellipse>
       </g>
       <defs>

@@ -48,7 +48,7 @@ const Hero = () => {
                 className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-6 font-semibold"
               >
                 Aspiring Data Scientist | Tech Enthusiast
-                <span className="inline-block w-0.5 h-6 md:h-8 bg-white ml-1 animate-pulse align-middle" />
+                <span className="inline-block w-0.5 h-6 md:h-8 bg-foreground ml-1 animate-pulse align-middle" />
               </motion.p>
               <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-xl mb-8 animate-slide-in-up" style={{ animationDelay: "0.4s" }}>
                 Passionate about <span className="text-foreground font-semibold">Data Science</span>, learning{" "}
@@ -58,7 +58,7 @@ const Hero = () => {
                 <Button
                   size="lg"
                   onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
-                  className="font-semibold px-6 md:px-8 bg-white/20 hover:bg-white/30 text-white border-white/20"
+                  className="font-semibold px-6 md:px-8 bg-foreground/20 hover:bg-foreground/30 text-foreground border-foreground/20"
                 >
                   View Projects
                 </Button>

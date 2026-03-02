@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -75,25 +76,31 @@ const Navbar = () => {
                     scrollToSection(link.href);
                   }}
                   className={`relative px-4 py-2 rounded-full text-sm font-medium cursor-pointer transition-all duration-300 ${activeSection === link.id
-                      ? "text-foreground bg-white/10"
-                      : "text-foreground/60 hover:text-foreground hover:bg-white/5"
+                      ? "text-foreground bg-foreground/10"
+                      : "text-foreground/60 hover:text-foreground hover:bg-foreground/5"
                     }`}
                 >
                   {link.name}
                   {activeSection === link.id && (
-                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-white" />
+                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-foreground" />
                   )}
                 </a>
               ))}
+              <div className="ml-3">
+                <ThemeToggle />
+              </div>
             </div>
 
-            <button
-              className="md:hidden text-foreground p-2 rounded-full hover:bg-white/10 transition-colors"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label="Toggle menu"
-            >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            <div className="flex items-center gap-3 md:hidden">
+              <ThemeToggle />
+              <button
+                className="text-foreground p-2 rounded-full hover:bg-foreground/10 transition-colors"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                aria-label="Toggle menu"
+              >
+                {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
           </div>
         </div>
       </nav>
@@ -111,8 +118,8 @@ const Navbar = () => {
                     scrollToSection(link.href);
                   }}
                   className={`text-2xl font-heading font-semibold py-3 px-4 rounded-xl transition-all cursor-pointer ${activeSection === link.id
-                      ? "text-foreground bg-white/10"
-                      : "text-foreground/60 hover:text-foreground hover:bg-white/5"
+                      ? "text-foreground bg-foreground/10"
+                      : "text-foreground/60 hover:text-foreground hover:bg-foreground/5"
                     }`}
                 >
                   {link.name}

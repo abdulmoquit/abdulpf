@@ -95,11 +95,11 @@ const Contact = () => {
                       whileHover={{ x: 4 }}
                       key={index}
                       href={social.href}
-                      className="flex items-center gap-4 glass rounded-xl p-4 transition-colors duration-300 hover:bg-white/5 group border border-white/5 hover:border-white/10"
+                      className="flex items-center gap-4 glass rounded-xl p-4 transition-colors duration-300 hover:bg-foreground/5 group border border-foreground/5 hover:border-foreground/10"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <div className="p-2 rounded-lg bg-white/5">
+                      <div className="p-2 rounded-lg bg-foreground/5">
                         <Icon className="w-5 h-5 text-foreground/70" />
                       </div>
                       <div className="flex-1">
@@ -119,13 +119,13 @@ const Contact = () => {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             >
-              <form onSubmit={handleSubmit} className="glass rounded-2xl p-8 space-y-5 border border-white/5">
+              <form onSubmit={handleSubmit} className="glass rounded-2xl p-8 space-y-5 border border-foreground/5">
                 <Input
                   type="text"
                   placeholder="Your Name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="bg-white/5 border-white/10 focus:border-white/30 transition-colors rounded-xl"
+                  className="bg-foreground/5 border-foreground/10 focus:border-foreground/30 transition-colors rounded-xl"
                   required
                 />
                 <Input
@@ -133,25 +133,25 @@ const Contact = () => {
                   placeholder="Your Email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="bg-white/5 border-white/10 focus:border-white/30 transition-colors rounded-xl"
+                  className="bg-foreground/5 border-foreground/10 focus:border-foreground/30 transition-colors rounded-xl"
                   required
                 />
                 <Textarea
                   placeholder="Your Message"
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="bg-white/5 border-white/10 focus:border-white/30 transition-colors min-h-[140px] resize-none rounded-xl"
+                  className="bg-foreground/5 border-foreground/10 focus:border-foreground/30 transition-colors min-h-[140px] resize-none rounded-xl"
                   required
                 />
                 <Button
                   type="submit"
-                  className="w-full font-semibold neon-glow bg-white/20 hover:bg-white/30 text-white border-white/20 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full font-semibold neon-glow bg-foreground/20 hover:bg-foreground/30 text-foreground border-foreground/20 disabled:opacity-50 disabled:cursor-not-allowed"
                   size="lg"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (
                     <>
-                      <div className="w-5 h-5 mr-2 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                      <div className="w-5 h-5 mr-2 border-2 border-foreground/30 border-t-foreground rounded-full animate-spin" />
                       Sending...
                     </>
                   ) : (

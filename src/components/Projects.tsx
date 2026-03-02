@@ -82,12 +82,12 @@ const Projects = () => {
               key={index}
               variants={itemVariants}
               whileHover={{ y: -6 }}
-              className="glass rounded-2xl p-8 cursor-pointer relative overflow-hidden group border border-white/5 hover:border-white/15 transition-all duration-300"
+              className="glass rounded-2xl p-8 cursor-pointer relative overflow-hidden group border border-foreground/5 hover:border-foreground/15 transition-all duration-300"
               onMouseEnter={() => setHoveredProject(index)}
               onMouseLeave={() => setHoveredProject(null)}
             >
               <div
-                className={`absolute inset-0 bg-gradient-to-br from-white/5 to-transparent transition-opacity duration-500 ease-in-out ${hoveredProject === index ? "opacity-100" : "opacity-0"}`}
+                className={`absolute inset-0 bg-gradient-to-br from-foreground/5 to-transparent transition-opacity duration-500 ease-in-out ${hoveredProject === index ? "opacity-100" : "opacity-0"}`}
               />
 
               <div className="relative z-10">
@@ -98,7 +98,7 @@ const Projects = () => {
                 <p className="text-muted-foreground mb-6 leading-relaxed">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tech.map((tech, i) => (
-                    <span key={i} className="px-3 py-1 text-xs font-semibold rounded-full bg-white/5 text-foreground/80 border border-white/10">
+                    <span key={i} className="px-3 py-1 text-xs font-semibold rounded-full bg-foreground/5 text-foreground/80 border border-foreground/10">
                       {tech}
                     </span>
                   ))}
@@ -108,7 +108,7 @@ const Projects = () => {
                     <Github className="w-4 h-4 mr-2" />
                     Code
                   </Button>
-                  <Button size="sm" className="bg-white/10 hover:bg-white/15 text-foreground border border-white/10">
+                  <Button size="sm" className="bg-foreground/10 hover:bg-foreground/15 text-foreground border border-foreground/10">
                     <ExternalLink className="w-4 h-4 mr-2" />
                     Demo
                   </Button>

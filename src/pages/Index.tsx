@@ -51,7 +51,7 @@ const Index = () => {
     <Resume />
     <Contact />
 
-    <footer className="py-12 border-t border-white/5 bg-card/30 relative">
+    <footer className="py-12 border-t border-foreground/5 bg-card/30 relative">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex flex-col items-center md:items-start gap-2">

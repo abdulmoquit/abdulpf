@@ -3,73 +3,87 @@
 @tailwind utilities;
 
 @layer base {
+  /* Light mode — soft warm gray, NOT super white */
   :root {
-    --background: 0 0% 4%;
-    --foreground: 0 0% 95%;
+    --background: 0 0% 94%;
+    --foreground: 0 0% 10%;
 
-    --card: 0 0% 8%;
-    --card-foreground: 0 0% 95%;
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 10%;
 
-    --popover: 0 0% 6%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 0 0% 96%;
+    --popover-foreground: 0 0% 10%;
 
-    --primary: 0 0% 100%;
-    --primary-foreground: 0 0% 4%;
+    --primary: 0 0% 10%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 0 0% 20%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 0 0% 88%;
+    --secondary-foreground: 0 0% 10%;
 
-    --muted: 0 0% 14%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 40%;
 
-    --accent: 0 0% 20%;
-    --accent-foreground: 0 0% 95%;
+    --accent: 0 0% 88%;
+    --accent-foreground: 0 0% 10%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 95%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 16%;
-    --input: 0 0% 12%;
-    --ring: 0 0% 60%;
+    --border: 0 0% 84%;
+    --input: 0 0% 88%;
+    --ring: 0 0% 40%;
 
     --radius: 1rem;
 
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100% / 0.05), hsl(0 0% 50% / 0.05));
-    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(0 0% 100% / 0.08), transparent 70%);
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 0% / 0.03), hsl(0 0% 50% / 0.03));
+    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(0 0% 0% / 0.04), transparent 70%);
 
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
 
-    --sidebar-background: 0 0% 6%;
-    --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 0 0% 100%;
-    --sidebar-primary-foreground: 0 0% 4%;
-    --sidebar-accent: 0 0% 12%;
-    --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 0 0% 16%;
-    --sidebar-ring: 0 0% 60%;
+    --sidebar-background: 0 0% 96%;
+    --sidebar-foreground: 0 0% 10%;
+    --sidebar-primary: 0 0% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 0 0% 90%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 0 0% 84%;
+    --sidebar-ring: 0 0% 40%;
   }
 
+  /* Dark mode — the original theme */
   .dark {
     --background: 0 0% 4%;
     --foreground: 0 0% 95%;
+
     --card: 0 0% 8%;
     --card-foreground: 0 0% 95%;
+
     --popover: 0 0% 6%;
     --popover-foreground: 0 0% 95%;
+
     --primary: 0 0% 100%;
     --primary-foreground: 0 0% 4%;
+
     --secondary: 0 0% 20%;
     --secondary-foreground: 0 0% 95%;
+
     --muted: 0 0% 14%;
     --muted-foreground: 0 0% 60%;
+
     --accent: 0 0% 20%;
     --accent-foreground: 0 0% 95%;
+
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 95%;
+
     --border: 0 0% 16%;
     --input: 0 0% 12%;
     --ring: 0 0% 60%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100% / 0.05), hsl(0 0% 50% / 0.05));
+    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(0 0% 100% / 0.08), transparent 70%);
+
     --sidebar-background: 0 0% 6%;
     --sidebar-foreground: 0 0% 95%;
     --sidebar-primary: 0 0% 100%;
@@ -92,6 +106,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   html {
@@ -105,8 +120,8 @@
   }
 
   /* Gradient divider between sections */
-  section+section {
-    border-top: 1px solid rgba(255, 255, 255, 0.03);
+  section + section {
+    border-top: 1px solid hsl(var(--border) / 0.2);
   }
 
   h1,

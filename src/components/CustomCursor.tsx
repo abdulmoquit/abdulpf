@@ -63,12 +63,12 @@ const CustomCursor = () => {
         <>
             <div
                 ref={outerRef}
-                className="fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-[9999] bg-foreground/20 mix-blend-difference outline outline-1 outline-foreground/50 shadow-[0_0_20px_rgba(255,255,255,0.4)]"
+                className="fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-[9999] bg-foreground/20 mix-blend-difference outline outline-1 outline-foreground/50 shadow-[0_0_20px_hsl(var(--foreground)/0.4)]"
                 style={{ willChange: "transform", transition: "width 0.2s, height 0.2s" }}
             />
             <div
                 ref={innerRef}
-                className="fixed top-0 left-0 w-2 h-2 rounded-full pointer-events-none z-[10000] bg-white"
+                className="fixed top-0 left-0 w-2 h-2 rounded-full pointer-events-none z-[10000] bg-foreground"
                 style={{ willChange: "transform" }}
             />
         </>

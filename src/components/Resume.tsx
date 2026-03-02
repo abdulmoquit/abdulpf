@@ -78,17 +78,17 @@ const Resume = () => {
                   key={index}
                   variants={itemVariants}
                   whileHover={{ y: -4 }}
-                  className="glass rounded-2xl p-8 border border-white/5 hover:border-white/10 transition-all duration-300"
+                  className="glass rounded-2xl p-8 border border-foreground/5 hover:border-foreground/10 transition-all duration-300"
                 >
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="p-2 rounded-xl bg-white/5">
+                    <div className="p-2 rounded-xl bg-foreground/5">
                       <Icon className="w-6 h-6 text-foreground/70" />
                     </div>
                     <h3 className="text-xl font-heading font-bold">{section.title}</h3>
                   </div>
                   <div className="space-y-5">
                     {section.items.map((item, i) => (
-                      <div key={i} className="relative pl-4 border-l-2 border-white/10">
+                      <div key={i} className="relative pl-4 border-l-2 border-foreground/10">
                         <h4 className="font-semibold mb-1">{item.name}</h4>
                         <p className="text-sm text-muted-foreground">{item.detail}</p>
                         <div className="flex items-center gap-1 mt-2">
@@ -112,7 +112,7 @@ const Resume = () => {
           >
             <Button
               size="lg"
-              className="font-semibold neon-glow bg-white/20 hover:bg-white/30 text-white border-white/20"
+              className="font-semibold neon-glow bg-foreground/20 hover:bg-foreground/30 text-foreground border-foreground/20"
             >
               <Download className="w-5 h-5 mr-2" />
               Download Full Resume

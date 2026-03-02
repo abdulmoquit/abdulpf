@@ -70,7 +70,7 @@ const Skills = () => {
                   key={skill.name}
                   variants={itemVariants}
                   whileHover={{ scale: 1.08, y: -4 }}
-                  className="rounded-2xl p-6 flex flex-col items-center justify-center gap-4 cursor-pointer transition-shadow duration-300 border bg-white/5 border-white/10 hover:border-white/20 hover:shadow-lg hover:shadow-white/5"
+                  className="rounded-2xl p-6 flex flex-col items-center justify-center gap-4 cursor-pointer transition-shadow duration-300 border bg-foreground/5 border-foreground/10 hover:border-foreground/20 hover:shadow-lg hover:shadow-foreground/5"
                 >
                   <Icon className="w-10 h-10 text-foreground/80" />
                   <span className="font-semibold text-center text-sm">{skill.name}</span>

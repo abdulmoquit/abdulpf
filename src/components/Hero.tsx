@@ -58,7 +58,7 @@ const Hero = () => {
                 <Button
                   size="lg"
                   onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
-                  className="font-semibold px-6 md:px-8 bg-foreground/20 hover:bg-foreground/30 text-foreground border-foreground/20"
+                  className="font-semibold px-6 md:px-8 bg-primary text-primary-foreground hover:bg-primary/90 border-primary/20"
                 >
                   View Projects
                 </Button>

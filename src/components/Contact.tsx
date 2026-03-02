@@ -145,7 +145,7 @@ const Contact = () => {
                 />
                 <Button
                   type="submit"
-                  className="w-full font-semibold neon-glow bg-foreground/20 hover:bg-foreground/30 text-foreground border-foreground/20 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full font-semibold neon-glow bg-primary text-primary-foreground hover:bg-primary/90 border-primary/20 disabled:opacity-50 disabled:cursor-not-allowed"
                   size="lg"
                   disabled={isSubmitting}
                 >

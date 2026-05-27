@@ -21,6 +21,27 @@
 </head>
 
   <body>
+    <div id="loading-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #0b0b0c; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 999999; transition: opacity 0.4s ease-in-out; font-family: 'Poppins', sans-serif;">
+      <div style="font-size: 24px; font-weight: 800; color: #8a8a8a; letter-spacing: 0.1em; display: flex; align-items: center; margin-bottom: 12px; transform: scale(1.1);">
+        <span>A</span>
+        <span style="font-size: 16px; font-weight: 600; color: #ffffff; opacity: 0.8; margin-left: 2px;">bdul Moquit</span>
+        <span style="color: #8a8a8a; animation: pulse-dot 1.2s infinite alternate;">.</span>
+      </div>
+      <div style="width: 120px; height: 1px; background: rgba(255,255,255,0.08); position: relative; overflow: hidden; border-radius: 2px;">
+        <div style="position: absolute; left: 0; top: 0; height: 100%; width: 50%; background: #8a8a8a; animation: progress-slide 1.5s infinite ease-in-out; border-radius: 2px;"></div>
+      </div>
+      <style>
+        @keyframes pulse-dot {
+          0% { opacity: 0.2; }
+          100% { opacity: 1; }
+        }
+        @keyframes progress-slide {
+          0% { left: -50%; width: 30%; }
+          50% { width: 40%; }
+          100% { left: 100%; width: 30%; }
+        }
+      </style>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

@@ -111,19 +111,13 @@
   }
 
   html {
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth removed — Lenis handles smooth scrolling;
+       native smooth conflicts with Lenis causing double-smoothing lag */
   }
 
-  /* Skip rendering for sections far off-screen until they are about to scroll into view */
-  section {
-    content-visibility: auto;
-    contain-intrinsic-size: auto 800px;
-  }
-
-  /* Gradient divider between sections */
-  section+section {
-    border-top: 1px solid hsl(var(--border) / 0.2);
-  }
+  /* content-visibility: auto removed — it breaks GSAP ScrollTrigger
+     by making the browser skip rendering off-screen sections,
+     giving ScrollTrigger wrong dimensions and positions */
 
   h1,
   h2,
